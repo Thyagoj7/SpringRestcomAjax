@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/v1/soldado")
 public class SoldadoController {
@@ -44,4 +46,12 @@ public class SoldadoController {
         soldadoService.deletarSoldado(cpf);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping
+    public ResponseEntity<List<Soldado>> bucarSoldado() {
+        List<Soldado> soldados = soldadoService.buscarSoldados();
+        return ResponseEntity.status(HttpStatus.OK).body(soldados);
+    }
+
 }
+
