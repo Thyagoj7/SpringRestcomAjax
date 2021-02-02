@@ -1,5 +1,6 @@
 package com.example.demo.Service;
 
+import com.example.demo.Controller.request.SoldadoEditRequest;
 import com.example.demo.Dto.Soldado;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +17,11 @@ public class SoldadoService {
 
     }
 
+    public void criarSoldado(Soldado soldado){
 
+    }
+
+
+    public void alterarSoldado(String cpf, SoldadoEditRequest soldadoEditRequest) {
+    }
 }
