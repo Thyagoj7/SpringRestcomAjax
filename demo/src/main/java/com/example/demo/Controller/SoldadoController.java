@@ -33,10 +33,15 @@ public class SoldadoController {
 
     @PutMapping("/{cpf}")
     public ResponseEntity editarSoldado(@PathVariable() String cpf,
-                                        @RequestBody SoldadoEditRequest soldadoEditRequest){
-        soldadoService.alterarSoldado(cpf,soldadoEditRequest);
+                                        @RequestBody SoldadoEditRequest soldadoEditRequest) {
+        soldadoService.alterarSoldado(cpf, soldadoEditRequest);
         return ResponseEntity.ok().build();
     }
 
+    @DeleteMapping("/{cpf}")
+    public ResponseEntity deletarSoldado(@PathVariable String cpf) {
 
+        soldadoService.deletarSoldado(cpf);
+        return ResponseEntity.ok().build();
+    }
 }
